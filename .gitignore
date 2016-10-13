@@ -1,9 +1,9 @@
 /settings.ini
 
-.idea/BGA.iml
+.idea/
 
-.idea/misc.xml
+data/chronograf/
 
-.idea/modules.xml
+data/influxdb/
 
-.idea/workspace.xml
+data/kapacitor/

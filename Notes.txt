@@ -1,0 +1,20 @@
+# Start all images in the background
+docker-compose up -d
+
+Access the Chronograf inteface, http://localhost:10000
+You will need to add the InfluxDB server. Use these settings:
+NOTE: HOST IS NOT LOCAL HOST, IT IS INFLUXDB!
+Host: influxdb
+Port: 8086
+No auth or SSL.
+
+Issues:
+https://hub.docker.com/r/rapport/influxdb/builds/bbvb6orzogfcnkqzpxgwedc/
+
+
+CLI:
+docker-compose run influxdb-cli
+DB Admin Page
+http://localhost:8083/
+Chronograf:
+http://localhost:10000

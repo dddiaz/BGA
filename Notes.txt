@@ -11,10 +11,25 @@ No auth or SSL.
 Issues:
 https://hub.docker.com/r/rapport/influxdb/builds/bbvb6orzogfcnkqzpxgwedc/
 
-
 CLI:
 docker-compose run influxdb-cli
 DB Admin Page
 http://localhost:8083/
 Chronograf:
 http://localhost:10000
+
+The only links that matter:
+https://www.influxdata.com/how-to-create-iot-influxdb-google-cloud-platform-part-3/
+https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb
+https://docs.influxdata.com/influxdb/v1.0/tools/api_client_libraries/
+https://github.com/influxdata/influxdb-python
+
+
+TODO:
+Connect flask app to mongo db
+create api to get latest bg rating
+dont forget to add settings.ini file and dont include in source control
+
+add api to telgraf with input being json webservice and output to influxdb
+
+make sure influxdb starts up with ng database? can telegraf handle that?

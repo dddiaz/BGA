@@ -59,3 +59,10 @@ services:
       KAPACITOR_URL: http://kapacitor:9092
     links:
       - kapacitor
+  # Define a Flask webservice for telegraf to use
+  web:
+    build: ./web
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/code

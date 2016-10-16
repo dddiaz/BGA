@@ -61,6 +61,7 @@ services:
       - kapacitor
   # Define a Flask webservice for telegraf to use
   web:
+    # do i need to add latest to this?
     build: ./web
     ports:
       - "5000:5000"

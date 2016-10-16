@@ -7,3 +7,11 @@ data/chronograf/
 data/influxdb/
 
 data/kapacitor/
+
+web/connection_strings.ini
+
+web/AppSettings.ini
+
+*.pyc
+
+web/venv/

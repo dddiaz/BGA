@@ -24,6 +24,8 @@ https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb
 https://docs.influxdata.com/influxdb/v1.0/tools/api_client_libraries/
 https://github.com/influxdata/influxdb-python
 
+http://containertutorials.com/docker-compose/flask-compose.html
+
 
 TODO:
 Connect flask app to mongo db
@@ -33,3 +35,6 @@ dont forget to add settings.ini file and dont include in source control
 add api to telgraf with input being json webservice and output to influxdb
 
 make sure influxdb starts up with ng database? can telegraf handle that?
+
+kinda wanna model:
+http://containertutorials.com/docker-compose/nginx-flask-postgresql.html

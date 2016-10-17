@@ -1,0 +1,5 @@
+changed interval from 10s to 600
+interval = "10s"
+
+changed flush interval to 600s as well
+flush_interval = "10s"

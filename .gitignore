@@ -15,3 +15,5 @@ web/AppSettings.ini
 *.pyc
 
 web/venv/
+
+web/private_notes.ini

@@ -38,3 +38,33 @@ make sure influxdb starts up with ng database? can telegraf handle that?
 
 kinda wanna model:
 http://containertutorials.com/docker-compose/nginx-flask-postgresql.html
+
+
+
+
+[[inputs.httpjson]]
+  name = "mycollector"
+  servers = [
+    "http://0.0.0.0:5000/lastbg"
+  ]
+
+  # HTTP method to use (case-sensitive)
+  method = "GET"
+  # Set response_timeout (default 5 seconds)
+  # response_timeout = "5s"
+
+
+CHRONGRAF SETUP
+OK to get it working i used
+
+docker-compose run influxdb-cli
+to get into cli and look at measurements
+then
+show databases
+to the the dbs
+then use telgraf
+then show measurements
+system should be in there cause its an input
+
+then on chrongraf just say filter by system
+and use load1 

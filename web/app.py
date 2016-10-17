@@ -23,7 +23,7 @@ MONGO_DB = config['nightscout-mongodb']['MONGO_DB']
 MONGODB_URI = ''.join(['mongodb://', MONGO_USER, ':', MONGO_USER_PASSWORD,
                         '@', MONGO_HOST, ':', str(MONGO_PORT), '/', MONGO_DB])
 
-print(MONGODB_URI)
+#print(MONGODB_URI)
 client = MongoClient(MONGODB_URI)
 
 db = client.get_default_database()
@@ -42,8 +42,9 @@ def lastbg():
         cursor = entries.find().sort([("date", -1)]).limit(1)
         # todo check database is set up and connected to
         # also what happens if no values in db
+        # TODO change this to not put json in list, just return single
         return dumps(cursor)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port=5000)

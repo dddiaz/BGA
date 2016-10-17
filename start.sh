@@ -1,3 +1,3 @@
-docker-compose up -d
+#docker-compose up -d
 # to rebuild
-#docker-compose up --build -d
+docker-compose up --build -d

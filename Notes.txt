@@ -67,4 +67,40 @@ then show measurements
 system should be in there cause its an input
 
 then on chrongraf just say filter by system
-and use load1 
+and use load1
+
+
+note Measurements – these are your metrics. We’re using Telegraf in these examples, a plugin-driven server agent for reporting metrics into InfluxDB. It can track system metrics like cpu and disk usage, as well as services like Redis and ElasticSearch.
+Tags – key/value pairs used to provide metadata (e.g. region=us-west, host=server01).
+
+#attatch to a running container
+sudo docker exec -i -t db0c4bcc29cd  /bin/bash
+
+docker exec -it <containerIdOrName> bash
+exit
+
+
+#######
+maybe look into a cross origin resource request issue
+still not sure why api cant be called from another container
+
+# to remote into terminal
+sudo docker exec -i -t 665b4a1e17b6 /bin/bash
+
+# to get ip addr of container
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' bgatick_web_1
+https://docs.docker.com/engine/tutorials/usingdocker/
+
+
+
+
+https://docs.docker.com/engine/tutorials/usingdocker/
+################
+Supper Important note!
+0.0.0.0:5000 does not work for flask api
+need to set up telgraf with actual ip addrs
+use:
+docker inspect nostalgic_morse
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' bgatick_web_1
+Currently returns: 172.18.0.3:5000
+################

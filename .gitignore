@@ -17,3 +17,5 @@ web/AppSettings.ini
 web/venv/
 
 web/private_notes.ini
+
+telegraf.env

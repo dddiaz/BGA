@@ -12,6 +12,10 @@ services:
       - "8092:8092/udp"
       - "8094:8094"
       - "8125:8125/udp"
+    links:
+      - web
+    env_file:
+      - telegraf.env
   # Define an InfluxDB service
   influxdb:
     image: influxdb:1.0.0-rc1

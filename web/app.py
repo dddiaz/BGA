@@ -2,8 +2,8 @@ import os
 from flask import Flask, redirect, url_for, request, render_template
 from pymongo import MongoClient
 import configparser
-import json
 from bson.json_util import dumps
+import json
 
 app = Flask(__name__)
 
@@ -39,11 +39,20 @@ def hello_world():
 @app.route('/lastbg')
 def lastbg():
     if entries is not None:
+        #cursor = entries.find().sort([("date", -1)]).limit(1)
         cursor = entries.find().sort([("date", -1)]).limit(1)
         # todo check database is set up and connected to
         # also what happens if no values in db
         # TODO change this to not put json in list, just return single
+        # Hack to get around bson dumping json into json array instead of single object
+        # telegraf doesnt like [{json}]
+
+        #temp = dumps(cursor)
+        #data = json.loads(temp)
+        #return json.dumps(data[0])
+
         return dumps(cursor)
+
 
 
 if __name__ == '__main__':
